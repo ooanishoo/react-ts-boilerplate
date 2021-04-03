@@ -5,6 +5,7 @@ A boilerplate to start writing your React ⚛️ application in Typescript (𝖳
 - Eslint 🚨
 - Prettier 💄
 - Husky 👮🏽‍♀️ 
+- Ramda ⒡
 
 all setup and ready to use out of the box!
 
@@ -35,15 +36,21 @@ $ cd react-ts-boilerplate
 
 - Run `npm run build` to build the app for production to the `build` folder.
 
+# Settings
 ### Environment variables
 If you require any environment variables, create a `.env` file in the root folder of the project and set the variable name starting with `REACT_APP_API_XXX` 
 
+### Change the title of the project
+Go to public/index.html and set the name of your project
+```shell
+<title>Project Name</title>
+```
 ### Example:
 ```shell
 REACT_APP_API_API_ENDPOINT=https://example.com/api
 ```
 
-## Packages
+# Pre-installed Packages 
 ### Eslint 
 - `eslint`: The core ESLint linting library
 - `eslint-plugin-react `
