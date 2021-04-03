@@ -46,7 +46,7 @@ REACT_APP_API_API_ENDPOINT=https://example.com/api
 ```
 
 - ### Change the title of the project
-Go to public/index.html and set the name of your project
+Go to `react-ts-boilerplate/public/index.html` and set the name of your project
 ```shell
 <title>Project Name</title>
 ```
