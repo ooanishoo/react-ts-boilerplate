@@ -12,6 +12,7 @@ module.exports = {
       version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
     },
   },
+  plugins: ["spellcheck"],
   extends: [
     "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from @typescript-eslint/eslint-plugin
@@ -21,5 +22,18 @@ module.exports = {
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    "spellcheck/spell-checker": [
+      1,
+      {
+        comments: true,
+        strings: true,
+        identifiers: true,
+        lang: "en_US",
+        skipWords: ["dict", "aff", "hunspellchecker", "hunspell", "utils"],
+        skipIfMatch: ["http://[^s]*"],
+        skipWordIfMatch: ["^foobar.*$"],
+        minLength: 3,
+      },
+    ],
   },
 };
