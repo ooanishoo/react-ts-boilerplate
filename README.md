@@ -42,3 +42,15 @@ If you require any environment variables, create a `.env` file in the root folde
 ```shell
 REACT_APP_API_API_ENDPOINT=https://example.com/api
 ```
+
+## Packages
+### Eslint 
+- `eslint`: The core ESLint linting library
+- `eslint-plugin-react `
+- `@typescript-eslint/parser`: The parser that will allow ESLint to lint TypeScript code
+- `@typescript-eslint/eslint-plugin`: A plugin that contains a bunch of ESLint rules that are TypeScript specific
+
+### Prettier 
+- `prettier`: The core prettier library
+- `eslint-config-prettier`: Disables ESLint rules that might conflict with prettier
+- `eslint-plugin-prettier`: Runs prettier as an ESLint rule
