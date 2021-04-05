@@ -124,6 +124,11 @@ REACT_APP_API_API_ENDPOINT=https://example.com/api
 - `ramda`: A practical functional library for JavaScript programmers.
 - `@types/ramda`: This package contains type definitions for ramda
 
+## Coming Soon: 👨🏽‍💻
+
+- [Redux Tool Kit](https://redux-toolkit.js.org/) Implementation
+- Graphql with [Apollo client](https://www.apollographql.com/docs/react/)
+
 # Found this project useful ? ❤️
 
 ### - Support by clicking the ⭐️ button on the upper right of this page.
