@@ -129,11 +129,10 @@ REACT_APP_API_API_ENDPOINT=https://example.com/api
 - [Redux Tool Kit](https://redux-toolkit.js.org/) Implementation
 - Graphql with [Apollo client](https://www.apollographql.com/docs/react/)
 
-# Found this project useful ? ❤️
+## Found this project useful ? ❤️
 
-### - Support by clicking the ⭐️ button on the upper right of this page.
-
-### - Feel free to follow me 🙌🏽 if you love these kind of projects.
+- Support by clicking the ⭐️ button on the upper right of this page.
+- Feel free to follow me 🙌🏽 if you love these kind of projects.
 
 # MIT License
 
