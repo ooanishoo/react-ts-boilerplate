@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MyComponent/> should render without crashing 1`] = `
+<div>
+  <div
+    data-testid="container"
+  >
+    This is a custom component
+  </div>
+</div>
+`;
