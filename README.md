@@ -134,6 +134,6 @@ REACT_APP_API_API_ENDPOINT=https://example.com/api
 - Support by clicking the ⭐️ button on the upper right of this page.
 - Feel free to follow me 🙌🏽 if you love these kind of projects.
 
-# MIT License
+## MIT License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/ooanishoo/react-ts-boilerplate/blob/main/LICENSE)
