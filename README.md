@@ -35,7 +35,7 @@ $ cd react-ts-boilerplate
 
 <img width="407" alt="Screen Shot 2021-04-05 at 6 55 25 pm" src="https://user-images.githubusercontent.com/9260574/113556968-9eba1280-9640-11eb-96c6-61a106310b8a.png">
 
-- On GitHub, navigate to your fork of the prorject and copy the git url. Then clone the repo.
+- On GitHub, navigate to your fork of the project and copy the git url. Then clone the repo.
 - Example:
 
 ```shell
@@ -71,7 +71,7 @@ $ git remote -v
 > upstream  https://github.com/ooanishoo/react-ts-boilerplate.git (push)
 ```
 
-- Now, your your fork is synced with the upstream repository [react-ts-boilerplate](https://github.com/ooanishoo/react-ts-boilerplate)
+- Now, your your fork is synced 🎉with the upstream repository [react-ts-boilerplate](https://github.com/ooanishoo/react-ts-boilerplate)
 
 ### Run the Application
 
@@ -88,7 +88,7 @@ $ git remote -v
 # Settings
 
 - ### Environment variables
-  If you require any environment variables, create a `.env` file in the root folder of the project and set the variable name starting with `REACT_APP_API_XXX`
+  If you require any environment variables, create a `.env` file in the root folder of the project and set the variable name starting with `REACT_APP_API_YOUR_VARIABLE_NAME`
 
 ### Example:
 
