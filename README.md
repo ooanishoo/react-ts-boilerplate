@@ -21,12 +21,57 @@ Spend less time on configuring your project 🛠⚙️ and start writing some co
 
 ## Installation
 
-Clone the repository
+### Clone the repository ⬇️
 
 ```shell
 $ git clone https://github.com/ooanishoo/react-ts-boilerplate
 $ cd react-ts-boilerplate
 ```
+
+### Fork the repository and clone ⚓️
+
+- On GitHub, navigate to the https://github.com/ooanishoo/react-ts-boilerplate repository.
+- In the top-right corner of the page, click Fork.
+
+<img width="407" alt="Screen Shot 2021-04-05 at 6 55 25 pm" src="https://user-images.githubusercontent.com/9260574/113556968-9eba1280-9640-11eb-96c6-61a106310b8a.png">
+
+- On GitHub, navigate to your fork of the prorject and copy the git url. Then clone the repo.
+- Example:
+
+```shell
+$ git clone https://github.com/YOUR_USERNAME/react-ts-boilerplate
+$ cd react-ts-boilerplate
+```
+
+### Keep your fork synced 🤝
+
+- If you wish to propose changes to this original repository [react-ts-boilerplate](https://github.com/ooanishoo/react-ts-boilerplate), it's a good practice to regularly sync your fork with the upstream repository.
+- You can configure Git to pull changes from the original, or upstream, repository into the local clone of your fork.
+- Go to your local forked repo and type `git remote -v` and press Enter. You'll see the current configured remote repository for your fork.
+
+```shell
+$ git remote -v
+> origin  https://github.com/YOUR_USERNAME/react-ts-boilerplate.git (fetch)
+> origin  https://github.com/YOUR_USERNAME/react-ts-boilerplate.git (push)
+```
+
+- Type the following command:
+
+```
+git remote add upstream https://github.com/ooanishoo/react-ts-boilerplate
+```
+
+- To verify the new upstream repository you've specified for your fork, type `git remote -v` again. You should see the URL for your fork as origin, and the URL for the original repository as upstream. It should look like this:
+
+```shell
+$ git remote -v
+> origin    https://github.com/YOUR_USERNAME/react-ts-boilerplate.git (fetch)
+> origin    https://github.com/YOUR_USERNAME/react-ts-boilerplate.git (push)
+> upstream  https://github.com/ooanishoo/react-ts-boilerplate.git (fetch)
+> upstream  https://github.com/ooanishoo/react-ts-boilerplate.git (push)
+```
+
+- Now, your your fork is synced with the upstream repository [react-ts-boilerplate](https://github.com/ooanishoo/react-ts-boilerplate)
 
 ### Run the Application
 
@@ -78,3 +123,9 @@ REACT_APP_API_API_ENDPOINT=https://example.com/api
 
 - `ramda`: A practical functional library for JavaScript programmers.
 - `@types/ramda`: This package contains type definitions for ramda
+
+# Found this project useful ? ❤️
+
+### - Support by clicking the ⭐️ button on the upper right of this page.
+
+### - Feel free to follow me 🙌🏽 if you love these kind of projects.
