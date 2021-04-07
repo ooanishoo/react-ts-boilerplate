@@ -5,11 +5,11 @@ const Header: React.FC = () => {
     return (
         <header data-testid="header">
             <nav data-testid="navigation" role="navigation">
-                <ul>
-                    <li>
+                <ul role="list">
+                    <li role="listitem">
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li role="listitem">
                         <Link to="/component">MyComponent</Link>
                     </li>
                 </ul>

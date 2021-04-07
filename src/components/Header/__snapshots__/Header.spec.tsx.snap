@@ -9,15 +9,21 @@ exports[`<Header/> should render without crashing 1`] = `
       data-testid="navigation"
       role="navigation"
     >
-      <ul>
-        <li>
+      <ul
+        role="list"
+      >
+        <li
+          role="listitem"
+        >
           <a
             href="/"
           >
             Home
           </a>
         </li>
-        <li>
+        <li
+          role="listitem"
+        >
           <a
             href="/component"
           >
