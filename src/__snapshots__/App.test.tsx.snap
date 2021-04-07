@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders without crashing 1`] = `
+<div>
+  <div>
+    <header
+      data-testid="header"
+    >
+      <nav
+        data-testid="navigation"
+        role="navigation"
+      >
+        <ul
+          role="list"
+        >
+          <li
+            role="listitem"
+          >
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            role="listitem"
+          >
+            <a
+              href="/component"
+            >
+              MyComponent
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main
+      data-testid="main"
+      role="main"
+    >
+      <div
+        data-testid="home"
+      >
+        Home
+      </div>
+    </main>
+  </div>
+</div>
+`;

@@ -1,20 +1,13 @@
 import React from 'react';
-import Routes from './Routes';
+import { Header, Main } from './components';
 
 const App: React.FC = () => {
     return (
         <div>
+            <Header />
             <Main />
         </div>
     );
 };
 
 export default App;
-
-export const Main: React.FC = () => {
-    return (
-        <main role="main">
-            <Routes />
-        </main>
-    );
-};
