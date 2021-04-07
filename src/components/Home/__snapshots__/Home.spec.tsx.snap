@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home/> should render without crashing 1`] = `
+<div>
+  <div
+    data-testid="home"
+  >
+    Home
+  </div>
+</div>
+`;

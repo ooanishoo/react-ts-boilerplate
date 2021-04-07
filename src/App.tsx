@@ -1,7 +1,20 @@
 import React from 'react';
+import Routes from './Routes';
 
-const App = (): React.ReactElement => {
-    return <div>Start your project</div>;
+const App: React.FC = () => {
+    return (
+        <div>
+            <Main />
+        </div>
+    );
 };
 
 export default App;
+
+export const Main: React.FC = () => {
+    return (
+        <main>
+            <Routes />
+        </main>
+    );
+};
