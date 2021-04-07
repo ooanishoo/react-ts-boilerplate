@@ -1,19 +1,12 @@
-import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
+import React from 'react';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Wrapper } from './__mocks__/Wrapper';
 
 afterEach(cleanup);
 
-/* a component that renders App component inside Router */
-const Wrapper: React.FC = () => (
-    <Router>
-        <App />
-    </Router>
-);
-
 test('renders learn react link', () => {
-    render(<Wrapper />);
+    render(<Wrapper component={<App />} />);
     const linkElement = screen.getByText(/Home/i);
     expect(linkElement).toBeInTheDocument();
 });

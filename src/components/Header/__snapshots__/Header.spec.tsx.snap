@@ -2,10 +2,30 @@
 
 exports[`<Header/> should render without crashing 1`] = `
 <div>
-  <div
+  <header
     data-testid="header"
   >
-    Header
-  </div>
+    <nav
+      data-testid="navigation"
+      role="navigation"
+    >
+      <ul>
+        <li>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/component"
+          >
+            MyComponent
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </div>
 `;

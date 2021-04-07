@@ -13,7 +13,7 @@ export default App;
 
 export const Main: React.FC = () => {
     return (
-        <main>
+        <main role="main">
             <Routes />
         </main>
     );
