@@ -38,6 +38,6 @@ describe('Render Routes correctly', () => {
 
         // click Home menu
         userEvent.click(screen.getByText(/Home/i));
-        expect(screen.getByText(/This is a Home Page/, { exact: false })).toBeInTheDocument();
+        expect(screen.getByText(/This is a Home Pages/, { exact: false })).toBeInTheDocument();
     });
 });
