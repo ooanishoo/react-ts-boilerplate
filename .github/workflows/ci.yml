@@ -1,8 +1,7 @@
-name: Pull Request Test
+name: Node.js CI
 
 on:
-  pull_request:
-    branches: [main]
+  push:
 
 jobs:
   nodeci:
