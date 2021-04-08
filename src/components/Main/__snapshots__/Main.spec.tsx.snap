@@ -9,7 +9,7 @@ exports[`<Main/> should render without crashing 1`] = `
     <div
       data-testid="home"
     >
-      Home
+      This is a Home Page
     </div>
   </main>
 </div>
