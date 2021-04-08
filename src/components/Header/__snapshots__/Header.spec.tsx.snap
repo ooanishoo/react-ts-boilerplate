@@ -5,6 +5,9 @@ exports[`<Header/> should render without crashing 1`] = `
   <header
     data-testid="header"
   >
+    <h1>
+      My Project
+    </h1>
     <nav
       data-testid="navigation"
       role="navigation"

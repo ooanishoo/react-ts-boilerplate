@@ -2,48 +2,49 @@
 
 exports[`<App /> renders without crashing 1`] = `
 <div>
-  <div>
-    <header
-      data-testid="header"
+  <header
+    data-testid="header"
+  >
+    <h1>
+      My Project
+    </h1>
+    <nav
+      data-testid="navigation"
+      role="navigation"
     >
-      <nav
-        data-testid="navigation"
-        role="navigation"
+      <ul
+        role="list"
       >
-        <ul
-          role="list"
+        <li
+          role="listitem"
         >
-          <li
-            role="listitem"
+          <a
+            href="/"
           >
-            <a
-              href="/"
-            >
-              Home
-            </a>
-          </li>
-          <li
-            role="listitem"
+            Home
+          </a>
+        </li>
+        <li
+          role="listitem"
+        >
+          <a
+            href="/component"
           >
-            <a
-              href="/component"
-            >
-              MyComponent
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main
-      data-testid="main"
-      role="main"
+            MyComponent
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    data-testid="main"
+    role="main"
+  >
+    <div
+      data-testid="home"
     >
-      <div
-        data-testid="home"
-      >
-        Home
-      </div>
-    </main>
-  </div>
+      Home
+    </div>
+  </main>
 </div>
 `;
