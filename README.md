@@ -7,6 +7,7 @@ A boilerplate to start writing your React ⚛️ application in Typescript (𝖳
 - Prettier 💄
 - Husky 👮🏽‍♀️
 - Ramda ⒡
+- Axios 🤙🏽
 
 all setup and ready to use out of the box!
 
