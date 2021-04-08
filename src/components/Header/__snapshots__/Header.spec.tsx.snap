@@ -28,9 +28,9 @@ exports[`<Header/> should render without crashing 1`] = `
           role="listitem"
         >
           <a
-            href="/component"
+            href="/todos"
           >
-            MyComponent
+            Todos
           </a>
         </li>
       </ul>

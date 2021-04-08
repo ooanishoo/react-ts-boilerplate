@@ -11,7 +11,7 @@ const Header: React.FC = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li role="listitem">
-                        <Link to="/component">MyComponent</Link>
+                        <Link to="/todos">Todos</Link>
                     </li>
                 </ul>
             </nav>

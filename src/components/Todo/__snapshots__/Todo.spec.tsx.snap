@@ -3,10 +3,10 @@
 exports[`<Todo/> should render without crashing 1`] = `
 <div>
   <div
-    data-testid="container"
+    data-testid="todo"
   >
     This is a todo component with ID :
-    1
+    3
   </div>
 </div>
 `;
