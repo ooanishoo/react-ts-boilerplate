@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageNotFound/> should render without crashing 1`] = `
+<div>
+  <section
+    data-testid="page-not-found"
+  >
+    <h1>
+      Opps! The page you requested was not found.
+    </h1>
+  </section>
+</div>
+`;
