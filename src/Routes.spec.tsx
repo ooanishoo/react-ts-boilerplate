@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -10,6 +10,7 @@ const renderWithRouter = (ui: React.ReactElement, { route = '/' } = {}) => {
     window.history.pushState({}, 'Test page', route);
     return render(ui, { wrapper: Router });
 };
+afterEach(cleanup);
 
 describe('Render Routes correctly', () => {
     test('should render Home component', () => {
