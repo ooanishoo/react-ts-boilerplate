@@ -1,17 +1,21 @@
-name: Continuous Integration
+name: Pull Request Test
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  test_pull_request:
+  nodeci:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
+          node-version: ${{ matrix.node-version }}
+      - run: npm i
       - run: npm run build
+      - run: npm run test
