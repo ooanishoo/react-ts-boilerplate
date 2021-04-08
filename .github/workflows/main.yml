@@ -1,15 +1,15 @@
-name: Tests
+name: Run Jest Tests
 
 on:
-  pull_request:
-      types: [opened, edited, synchronize, reopened]
+  pull_request: branches:[main]
 
 jobs:
-  build:
-
+  test_pull_request:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with: node-version:12
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
