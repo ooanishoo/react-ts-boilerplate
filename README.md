@@ -97,6 +97,8 @@ $ git remote -v
 REACT_APP_API_API_ENDPOINT=https://example.com/api
 ```
 
+Since this boilerplate shows how you can fetch data from external api, create a `.env` file in the root directory and copy the contents from `.env.example`  
+
 - ### Change the title of the project
   Go to `react-ts-boilerplate/public/index.html` and set the name of your project
 
