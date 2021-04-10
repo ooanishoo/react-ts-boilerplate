@@ -1,7 +1,7 @@
 import { cleanup } from '@testing-library/react';
+import axios, { AxiosResponse } from 'axios';
 import { getTodo, getTodos } from '.';
 import { Todo } from '../types';
-import axios, { AxiosResponse } from 'axios';
 
 afterEach(cleanup);
 
@@ -31,11 +31,23 @@ describe('getTodos()', () => {
             headers: {},
             config: {},
         };
-        mockedAxios.get.mockResolvedValue(mockedResponse);
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
         expect(axios.get).not.toHaveBeenCalled();
         const data = await getTodos();
         expect(axios.get).toHaveBeenCalled();
         expect(data).toEqual(todos);
+    });
+    test('should throw error when response status is not 200', async () => {
+        const mockedResponse: AxiosResponse = {
+            data: null,
+            status: 100,
+            statusText: 'OK',
+            headers: {},
+            config: {},
+        };
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+        await expect(getTodo(101)).rejects.toThrow(new Error('Something went wrong'));
+        expect(axios.get).toHaveBeenCalled();
     });
 });
 
@@ -44,7 +56,7 @@ describe('getTodo()', () => {
         const todo: Todo = {
             userId: 1,
             id: 1,
-            title: 'delectus aut autem',
+            title: 'test-todo',
             completed: false,
         };
         const mockedResponse: AxiosResponse = {
@@ -54,14 +66,25 @@ describe('getTodo()', () => {
             headers: {},
             config: {},
         };
-        mockedAxios.get.mockResolvedValue(mockedResponse);
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
 
         expect(axios.get).not.toHaveBeenCalled();
         const data: Todo = await getTodo(1232323);
         expect(axios.get).toHaveBeenCalled();
         expect(data).toEqual(todo);
     });
-});
 
-//jest.mock('axios');
-//jest.mock('axios', () => jest.fn());
+    test('should throw error when response status is not 200', async () => {
+        const mockedResponse: AxiosResponse = {
+            data: null,
+            status: 100,
+            statusText: 'OK',
+            headers: {},
+            config: {},
+        };
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+        //expect(getTodo(1232323)).rejects.toEqual(new Error('Something went wrong'));
+        await expect(getTodo(1232323)).rejects.toThrow(new Error('Something went wrong'));
+        expect(axios.get).toHaveBeenCalled();
+    });
+});
