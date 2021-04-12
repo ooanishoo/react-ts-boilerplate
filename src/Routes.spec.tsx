@@ -1,6 +1,7 @@
-import { cleanup, render } from '@testing-library/react';
+import { cleanup, screen, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import { act } from 'react-dom/test-utils';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './App';
 import { Todo, TodoList } from './components';
@@ -18,9 +19,13 @@ describe('Render Routes correctly', () => {
         expect(screen.getByText(/This is a Home Page/, { exact: false })).toBeInTheDocument();
     });
 
-    test('should render TodoList component', () => {
-        const screen = renderWithRouter(<TodoList />, { route: '/todos' });
-        expect(screen.getByText(/This is a Todo List/, { exact: false })).toBeInTheDocument();
+    test('should render TodoList component', async () => {
+        await act(async () => {
+            const { getByTestId } = renderWithRouter(<TodoList />, { route: '/todos' });
+            const todoList = await waitFor(() => getByTestId('loading-spinner'));
+            expect(todoList).toBeInTheDocument();
+            //expect(screen.getByText(/This is a Todo List/, { exact: false })).toBeInTheDocument();
+        });
     });
 
     test('should render Todo component', () => {
@@ -29,13 +34,15 @@ describe('Render Routes correctly', () => {
         expect(getByTestId('todo')).toHaveTextContent(output);
     });
 
-    test('should navigate between pages', () => {
-        const screen = renderWithRouter(<App />, {});
+    test('should navigate between pages', async () => {
+        const { getByTestId } = renderWithRouter(<App />, {});
         expect(screen.getByText(/This is a Home Page/, { exact: false })).toBeInTheDocument();
 
         // click Todos menu
         userEvent.click(screen.getByText(/Todos/i));
-        expect(screen.getByText(/This is a Todo List/, { exact: false })).toBeInTheDocument();
+        const todoList = await waitFor(() => getByTestId('loading-spinner'));
+        expect(todoList).toBeInTheDocument();
+        //expect(screen.getByText(/This is a Todo List/, { exact: false })).toBeInTheDocument();
 
         // click Home menu
         userEvent.click(screen.getByText(/Home/i));
