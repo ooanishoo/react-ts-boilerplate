@@ -2,6 +2,7 @@ import { cleanup, render, screen, waitFor, waitForElementToBeRemoved } from '@te
 import axios, { AxiosResponse } from 'axios';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
+import { getTodo } from '../../api';
 import { Todo } from '../../types';
 import TodoList from './TodoList';
 
@@ -26,6 +27,41 @@ const todos: Todo[] = [
 ];
 
 describe('<TodoList/>', () => {
+    test('should show loading spinner on component mount', async () => {
+        const mockedResponse: AxiosResponse = {
+            data: todos,
+            status: 200,
+            statusText: 'OK',
+            headers: {},
+            config: {},
+        };
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+
+        await act(async () => {
+            const { getByTestId } = render(<TodoList />);
+            expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
+            await waitFor(() => expect(getByTestId('loading-spinner')).toBeInTheDocument());
+            expect(mockedAxios.get).not.toHaveBeenCalled();
+        });
+    });
+
+    test('should show error message if the api throws an error ', async () => {
+        const mockedResponse: AxiosResponse = {
+            data: null,
+            status: 404,
+            statusText: 'OK',
+            headers: {},
+            config: {},
+        };
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+        await act(async () => {
+            const { getByTestId } = render(<TodoList />);
+            await waitFor(() => expect(getByTestId('error')).toBeInTheDocument());
+            expect(getByTestId('error')).toHaveTextContent('Something went wrong');
+            expect(mockedAxios.get).toHaveBeenCalled();
+        });
+    });
+
     test('should fetch todos and display data', async () => {
         const mockedResponse: AxiosResponse = {
             data: todos,
@@ -44,26 +80,6 @@ describe('<TodoList/>', () => {
             const todoList = await waitFor(() => getByTestId('todo-list'));
             expect(todoList).toHaveTextContent('This is a Todo List');
             expect(mockedAxios.get).toHaveBeenCalledTimes(1);
-        });
-    });
-
-    test.only('should show loading spinner on component mount and hide when the data has been fetched', async () => {
-        const mockedResponse: AxiosResponse = {
-            data: todos,
-            status: 200,
-            statusText: 'OK',
-            headers: {},
-            config: {},
-        };
-        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
-
-        await act(async () => {
-            const { getByTestId } = render(<TodoList />);
-            expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
-            await waitFor(() => expect(getByTestId('loading-spinner')).toBeInTheDocument());
-            expect(mockedAxios.get).not.toHaveBeenCalled();
-            // await waitForElementToBeRemoved(() => getByTestId('loading-spinner'));
-            // expect(mockedAxios.get).toHaveBeenCalledTimes(1);
         });
     });
 });
