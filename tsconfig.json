@@ -22,5 +22,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "types": ["cypress", "@testing-library/cypress"]
 }
