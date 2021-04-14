@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { cleanup, render, screen, waitFor, waitForElementToBeRemoved, within } from '@testing-library/react';
 import axios, { AxiosResponse } from 'axios';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
@@ -77,8 +77,12 @@ describe('<TodoList/>', () => {
             expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
             expect(mockedAxios.get).not.toHaveBeenCalled();
 
+            const todoContainer = await waitFor(() => getByTestId('todo-container'));
+            expect(todoContainer).toBeInTheDocument();
             const todoList = await waitFor(() => getByTestId('todo-list'));
-            expect(todoList).toHaveTextContent('This is a Todo List');
+            expect(todoList).toBeInTheDocument();
+            const todo = within(todoList).getAllByTestId('todo-item');
+            expect(todo.length).toEqual(2);
             expect(mockedAxios.get).toHaveBeenCalledTimes(1);
         });
     });
