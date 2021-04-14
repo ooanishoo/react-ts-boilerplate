@@ -17,11 +17,13 @@ it("navigates between pages", () => {
   cy.url().should("not.include", "/todos");
 });
 
-it("should render todos", () => {
+it("should render todos", async () => {
   cy.goToTodos(); // call custom command
   //cy.get('[data-testid="todo-list"]').as("todos"); // using alias
   //cy.get("@todos")
-  cy.get('[data-testid="todo-list"]')
+  cy.contains("Loading...");
+  await cy
+    .get('[data-testid="todo-list"]')
     .children()
     .should("be.visible")
     .and("have.length.at.least", 1);
