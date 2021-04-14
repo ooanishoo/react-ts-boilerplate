@@ -15,7 +15,7 @@ Cypress.Commands.add("goToTodos", () => {
   cy.visit("http://localhost:3000");
   cy.contains("Todos").click();
   cy.url().should("include", "/todos");
-  cy.contains("This is a Todo List");
+  //cy.contains("This is a Todo List");
 });
 
 // Custom command to click Links
