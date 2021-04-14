@@ -19,8 +19,9 @@ it("navigates between pages", () => {
 
 it("should render todos", () => {
   cy.goToTodos(); // call custom command
-  cy.get('[data-testid="todo-list"]').as("todos"); // using alias
-  cy.get("@todos")
+  //cy.get('[data-testid="todo-list"]').as("todos"); // using alias
+  //cy.get("@todos")
+  cy.get('[data-testid="todo-list"]')
     .children()
     .should("be.visible")
     .and("have.length.at.least", 1);
