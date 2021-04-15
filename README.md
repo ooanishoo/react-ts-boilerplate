@@ -2,10 +2,11 @@
 
 A boilerplate to start writing your React ⚛️ application in Typescript (𝖳𝖲) with
 
-- Jest 🧪
 - Eslint 🚨
 - Prettier 💄
 - Husky 👮🏽‍♀️
+- Jest 🧪
+- Cypress 🚦
 - Ramda ⒡
 - Axios 🤙🏽
 
