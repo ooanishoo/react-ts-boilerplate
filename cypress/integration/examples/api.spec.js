@@ -8,7 +8,7 @@ beforeEach(() => {
       "GET",
       "https://jsonplaceholder.typicode.com/todos",
       todos?.data || []
-    ).as("getTodos");
+    );
   });
   cy.visit("http://localhost:3000/todos");
   cy.loader().should("exist");
