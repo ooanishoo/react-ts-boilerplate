@@ -15,10 +15,19 @@ Cypress.Commands.add("goToTodos", () => {
   cy.visit("http://localhost:3000");
   cy.contains("Todos").click();
   cy.url().should("include", "/todos");
-  //cy.contains("This is a Todo List");
+  cy.contains("Loading...").should("exist");
 });
 
-// Custom command to click Links
+Cypress.Commands.add("loader", () => {
+  cy.contains("Loading...");
+});
+
+// custom clickLink method
 Cypress.Commands.add("clickLink", (label) => {
   cy.get("a").contains(label).click();
 });
+
+// custom getByTestId method
+Cypress.Commands.add("getByTestId", (testId) =>
+  cy.get(`[data-testid="${testId}"]`)
+);
