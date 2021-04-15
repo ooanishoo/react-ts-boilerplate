@@ -21,7 +21,6 @@ afterEach(() => {
 
 describe("Todo List", () => {
   it("should fetch two Todos", () => {
-    cy.wait("@getTodos"); // <--- wait explicitly for this route to finish
     cy.getByTestId("todo-list").children().should("have.length", 2);
     cy.getByTestId("todo-item").should("have.length", 2);
   });
