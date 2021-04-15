@@ -21,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +43,9 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.3.2",
+    "@cypress/webpack-dev-server": "^1.1.2",
+    "@testing-library/cypress": "^7.0.5",
     "@types/jest": "^26.0.22",
     "@types/node": "^12.20.7",
     "@types/react": "^17.0.3",
@@ -49,6 +53,7 @@
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
+    "cypress": "^7.1.0",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",

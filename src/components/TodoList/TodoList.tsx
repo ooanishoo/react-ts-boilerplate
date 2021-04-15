@@ -30,11 +30,11 @@ const TodoList: React.FC = () => {
     if (isLoading) return <div data-testid="loading-spinner">Loading...</div>;
     if (error) return <div data-testid="error">{error}</div>;
     return (
-        <div data-testid="todo-list">
+        <div data-testid="todo-container">
             <h1>This is a Todo List</h1>
-            <ul role="list">
+            <ul role="list" data-testid="todo-list">
                 {map((todo: Todo) => (
-                    <li role="listitem" data-testid="todo" key={todo.id}>
+                    <li role="listitem" data-testid="todo-item" key={todo.id}>
                         {todo.title}
                     </li>
                 ))(todos)}
