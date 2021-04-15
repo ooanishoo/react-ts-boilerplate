@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "todo-test-1",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": 2,
+      "title": "todo-test-2",
+      "completed": true
+    }
+  ],
+  "status": 200,
+  "statusText": "OK",
+  "headers": {},
+  "config": {}
+}
