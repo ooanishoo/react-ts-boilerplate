@@ -87,6 +87,11 @@ $ git remote -v
 
 - Run `npm run build` to build the app for production to the `build` folder.
 
+### Run the Tests
+
+- Run `npm test` to run Unit Tests
+- Run `npm run e2e` to run end to end tests using Cypress
+
 # Settings
 
 - ### Environment variables
