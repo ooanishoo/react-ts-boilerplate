@@ -2,10 +2,11 @@
 
 A boilerplate to start writing your React ⚛️ application in Typescript (𝖳𝖲) with
 
-- Jest 🧪
 - Eslint 🚨
 - Prettier 💄
 - Husky 👮🏽‍♀️
+- Jest 🧪
+- Cypress 🚦
 - Ramda ⒡
 - Axios 🤙🏽
 
@@ -85,6 +86,11 @@ $ git remote -v
   - You will also see any lint errors in the console.
 
 - Run `npm run build` to build the app for production to the `build` folder.
+
+### Run the Tests
+
+- Run `npm test` to run Unit Tests
+- Run `npm run e2e` to run end to end tests using Cypress
 
 # Settings
 
