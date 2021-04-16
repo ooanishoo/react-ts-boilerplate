@@ -14,10 +14,10 @@ beforeEach(() => {
   cy.loader().should("exist");
 });
 
-afterEach(() => {
-  // Loading Spinner should not exist
-  cy.loader().should("not.exist");
-});
+// afterEach(() => {
+//   // Loading Spinner should not exist
+//   cy.loader().should("not.exist");
+// });
 
 describe("Todo List", () => {
   it("should fetch two Todos", async () => {
