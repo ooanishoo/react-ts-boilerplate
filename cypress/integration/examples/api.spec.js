@@ -14,21 +14,16 @@ beforeEach(() => {
   cy.loader().should("exist");
 });
 
-// afterEach(() => {
-//   // Loading Spinner should not exist
-//   cy.loader().should("not.exist");
-// });
-
-//describe("Todo List", () => {
-it("should fetch two Todos", async () => {
-  //await cy.getByTestId("todo-list").children().should("have.length", 2);
-  //cy.getByTestId("todo-item").should("have.length", 2);
-
-  await cy
-    .get(`[data-testid="todo-list"]`)
-    //.getByTestId("todo-list")
-    .children()
-    .should("be.visible")
-    .and("have.length", 2);
+afterEach(() => {
+  // Loading Spinner should not exist
+  cy.loader().should("not.exist");
 });
-//});
+
+describe("Todo List", () => {
+  it("should fetch two Todos", () => {
+    cy.getByTestId("todo-list")
+      .children()
+      .should("be.visible")
+      .and("have.length.at.least", 1);
+  });
+});
