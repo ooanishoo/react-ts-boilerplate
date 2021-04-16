@@ -20,8 +20,15 @@ afterEach(() => {
 });
 
 describe("Todo List", () => {
-  it("should fetch two Todos", () => {
-    cy.getByTestId("todo-list").children().should("have.length", 2);
-    cy.getByTestId("todo-item").should("have.length", 2);
+  it("should fetch two Todos", async () => {
+    //await cy.getByTestId("todo-list").children().should("have.length", 2);
+    //cy.getByTestId("todo-item").should("have.length", 2);
+
+    await cy
+      .get(`[data-testid="todo-list"]`)
+      //.getByTestId("todo-list")
+      .children()
+      .should("be.visible")
+      .and("have.length", 2);
   });
 });
