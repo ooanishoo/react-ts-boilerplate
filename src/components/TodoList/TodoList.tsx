@@ -1,5 +1,6 @@
 import { map } from 'ramda';
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getTodos } from '../../api';
 import { Todo } from '../../types';
 
@@ -35,7 +36,10 @@ const TodoList: React.FC = () => {
             <ul role="list" data-testid="todo-list">
                 {map((todo: Todo) => (
                     <li role="listitem" data-testid="todo-item" key={todo.id}>
-                        {todo.title}
+                        <Link to={(location) => ({ ...location, pathname: `/todos/${todo.id}` })}>
+                            <input type="checkbox" checked={todo?.completed} readOnly />
+                            {todo.title}
+                        </Link>
                     </li>
                 ))(todos)}
             </ul>

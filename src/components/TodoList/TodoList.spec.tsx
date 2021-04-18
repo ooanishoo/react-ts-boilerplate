@@ -1,9 +1,9 @@
-import { cleanup, render, screen, waitFor, waitForElementToBeRemoved, within } from '@testing-library/react';
+import { cleanup, render, waitFor, within } from '@testing-library/react';
 import axios, { AxiosResponse } from 'axios';
 import React from 'react';
 import { act } from 'react-dom/test-utils';
-import { getTodo } from '../../api';
 import { Todo } from '../../types';
+import { Wrapper } from '../../__mocks__/Wrapper';
 import TodoList from './TodoList';
 
 afterEach(cleanup);
@@ -38,7 +38,7 @@ describe('<TodoList/>', () => {
         mockedAxios.get.mockResolvedValueOnce(mockedResponse);
 
         await act(async () => {
-            const { getByTestId } = render(<TodoList />);
+            const { getByTestId } = render(<Wrapper component={<TodoList />} />);
             expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
             await waitFor(() => expect(getByTestId('loading-spinner')).toBeInTheDocument());
             expect(mockedAxios.get).not.toHaveBeenCalled();
@@ -55,7 +55,7 @@ describe('<TodoList/>', () => {
         };
         mockedAxios.get.mockResolvedValueOnce(mockedResponse);
         await act(async () => {
-            const { getByTestId } = render(<TodoList />);
+            const { getByTestId } = render(<Wrapper component={<TodoList />} />);
             await waitFor(() => expect(getByTestId('error')).toBeInTheDocument());
             expect(getByTestId('error')).toHaveTextContent('Something went wrong');
             expect(mockedAxios.get).toHaveBeenCalled();
@@ -73,7 +73,7 @@ describe('<TodoList/>', () => {
         mockedAxios.get.mockResolvedValueOnce(mockedResponse);
 
         await act(async () => {
-            const { getByTestId } = render(<TodoList />);
+            const { getByTestId } = render(<Wrapper component={<TodoList />} />);
             expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
             expect(mockedAxios.get).not.toHaveBeenCalled();
 

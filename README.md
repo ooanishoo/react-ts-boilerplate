@@ -90,7 +90,8 @@ $ git remote -v
 ### Run the Tests
 
 - Run `npm test` to run Unit Tests
-- Run `npm run e2e` to run end to end tests using Cypress
+- Run `npm run e2e` to run end to end tests using Cypress. 
+  Make sure your app is running on port http://localhost:3000 before you run Cypress tests since the baseUrl for the test has been configured to port 3000
 
 # Settings
 

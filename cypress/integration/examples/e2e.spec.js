@@ -11,6 +11,7 @@ it("has a title", () => {
 
 it("navigates between pages", () => {
   //cy.pause();
+  cy.log("Clicking on Todos link");
   cy.clickLink("Todos");
   cy.url().should("include", "/todos");
   cy.clickLink("Home");
@@ -19,11 +20,8 @@ it("navigates between pages", () => {
 
 it("should render todos", async () => {
   cy.goToTodos(); // call custom command
-  //cy.get('[data-testid="todo-list"]').as("todos"); // using alias
-  //cy.get("@todos")
-  cy.contains("Loading...");
   await cy
-    .get('[data-testid="todo-list"]')
+    .getByTestId("todo-list")
     .children()
     .should("be.visible")
     .and("have.length.at.least", 1);
