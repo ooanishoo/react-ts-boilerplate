@@ -36,7 +36,7 @@ const TodoList: React.FC = () => {
             <ul role="list" data-testid="todo-list">
                 {map((todo: Todo) => (
                     <li role="listitem" data-testid="todo-item" key={todo.id}>
-                        <Link to="/todos/1">
+                        <Link to={(location) => ({ ...location, pathname: `/todos/${todo.id}` })}>
                             <input type="checkbox" checked={todo?.completed} readOnly />
                             {todo.title}
                         </Link>
