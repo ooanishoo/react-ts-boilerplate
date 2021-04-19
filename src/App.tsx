@@ -1,5 +1,5 @@
-import React from 'react';
-import { Header, Main } from './components';
+import React from 'react'
+import { Header, Main } from './components'
 
 const App: React.FC = () => {
     return (
@@ -7,7 +7,7 @@ const App: React.FC = () => {
             <Header />
             <Main />
         </>
-    );
-};
+    )
+}
 
-export default App;
+export default App

@@ -90,7 +90,7 @@ $ git remote -v
 ### Run the Tests
 
 - Run `npm test` to run Unit Tests
-- Run `npm run e2e` to run end to end tests using Cypress. 
+- Run `npm run e2e` to run end to end tests using Cypress.
   Make sure your app is running on port http://localhost:3000 before you run Cypress tests since the baseUrl for the test has been configured to port 3000
 
 # Settings
@@ -104,7 +104,7 @@ $ git remote -v
 REACT_APP_API_API_ENDPOINT=https://example.com/api
 ```
 
-Since this boilerplate shows how you can fetch data from external api, create a `.env` file in the root directory and copy the contents from `.env.example`  
+Since this boilerplate shows how you can fetch data from external api, create a `.env` file in the root directory and copy the contents from `.env.example`
 
 - ### Change the title of the project
   Go to `react-ts-boilerplate/public/index.html` and set the name of your project

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Home, PageNotFound, Todo, TodoList } from './components';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import { Home, PageNotFound, Todo, TodoList } from './components'
 
 const Routes: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const Routes: React.FC = () => {
             <Route exact path="/todos/:id" component={Todo} />
             <Route component={PageNotFound} />
         </Switch>
-    );
-};
+    )
+}
 
-export default Routes;
+export default Routes

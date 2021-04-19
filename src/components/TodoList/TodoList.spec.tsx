@@ -1,15 +1,15 @@
-import { cleanup, render, waitFor, within } from '@testing-library/react';
-import axios, { AxiosResponse } from 'axios';
-import React from 'react';
-import { act } from 'react-dom/test-utils';
-import { Todo } from '../../types';
-import { Wrapper } from '../../__mocks__/Wrapper';
-import TodoList from './TodoList';
+import { cleanup, render, waitFor, within } from '@testing-library/react'
+import axios, { AxiosResponse } from 'axios'
+import React from 'react'
+import { act } from 'react-dom/test-utils'
+import { Todo } from '../../types'
+import { Wrapper } from '../../__mocks__/Wrapper'
+import TodoList from './TodoList'
 
-afterEach(cleanup);
+afterEach(cleanup)
 
-jest.mock('axios');
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+jest.mock('axios')
+const mockedAxios = axios as jest.Mocked<typeof axios>
 
 const todos: Todo[] = [
     {
@@ -24,7 +24,7 @@ const todos: Todo[] = [
         title: 'todo-test-2',
         completed: true,
     },
-];
+]
 
 describe('<TodoList/>', () => {
     test('should show loading spinner on component mount', async () => {
@@ -34,16 +34,16 @@ describe('<TodoList/>', () => {
             statusText: 'OK',
             headers: {},
             config: {},
-        };
-        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+        }
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse)
 
         await act(async () => {
-            const { getByTestId } = render(<Wrapper component={<TodoList />} />);
-            expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
-            await waitFor(() => expect(getByTestId('loading-spinner')).toBeInTheDocument());
-            expect(mockedAxios.get).not.toHaveBeenCalled();
-        });
-    });
+            const { getByTestId } = render(<Wrapper component={<TodoList />} />)
+            expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...')
+            await waitFor(() => expect(getByTestId('loading-spinner')).toBeInTheDocument())
+            expect(mockedAxios.get).not.toHaveBeenCalled()
+        })
+    })
 
     test('should show error message if the api throws an error ', async () => {
         const mockedResponse: AxiosResponse = {
@@ -52,15 +52,15 @@ describe('<TodoList/>', () => {
             statusText: 'OK',
             headers: {},
             config: {},
-        };
-        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+        }
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse)
         await act(async () => {
-            const { getByTestId } = render(<Wrapper component={<TodoList />} />);
-            await waitFor(() => expect(getByTestId('error')).toBeInTheDocument());
-            expect(getByTestId('error')).toHaveTextContent('Something went wrong');
-            expect(mockedAxios.get).toHaveBeenCalled();
-        });
-    });
+            const { getByTestId } = render(<Wrapper component={<TodoList />} />)
+            await waitFor(() => expect(getByTestId('error')).toBeInTheDocument())
+            expect(getByTestId('error')).toHaveTextContent('Something went wrong')
+            expect(mockedAxios.get).toHaveBeenCalled()
+        })
+    })
 
     test('should fetch todos and display data', async () => {
         const mockedResponse: AxiosResponse = {
@@ -69,21 +69,21 @@ describe('<TodoList/>', () => {
             statusText: 'OK',
             headers: {},
             config: {},
-        };
-        mockedAxios.get.mockResolvedValueOnce(mockedResponse);
+        }
+        mockedAxios.get.mockResolvedValueOnce(mockedResponse)
 
         await act(async () => {
-            const { getByTestId } = render(<Wrapper component={<TodoList />} />);
-            expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...');
-            expect(mockedAxios.get).not.toHaveBeenCalled();
+            const { getByTestId } = render(<Wrapper component={<TodoList />} />)
+            expect(getByTestId('loading-spinner')).toHaveTextContent('Loading...')
+            expect(mockedAxios.get).not.toHaveBeenCalled()
 
-            const todoContainer = await waitFor(() => getByTestId('todo-container'));
-            expect(todoContainer).toBeInTheDocument();
-            const todoList = await waitFor(() => getByTestId('todo-list'));
-            expect(todoList).toBeInTheDocument();
-            const todo = within(todoList).getAllByTestId('todo-item');
-            expect(todo.length).toEqual(2);
-            expect(mockedAxios.get).toHaveBeenCalledTimes(1);
-        });
-    });
-});
+            const todoContainer = await waitFor(() => getByTestId('todo-container'))
+            expect(todoContainer).toBeInTheDocument()
+            const todoList = await waitFor(() => getByTestId('todo-list'))
+            expect(todoList).toBeInTheDocument()
+            const todo = within(todoList).getAllByTestId('todo-item')
+            expect(todo.length).toEqual(2)
+            expect(mockedAxios.get).toHaveBeenCalledTimes(1)
+        })
+    })
+})
