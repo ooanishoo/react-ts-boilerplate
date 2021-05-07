@@ -12,21 +12,15 @@ exports[`<App /> renders without crashing 1`] = `
       data-testid="navigation"
       role="navigation"
     >
-      <ul
-        role="list"
-      >
-        <li
-          role="listitem"
-        >
+      <ul>
+        <li>
           <a
             href="/"
           >
             Home
           </a>
         </li>
-        <li
-          role="listitem"
-        >
+        <li>
           <a
             href="/todos"
           >

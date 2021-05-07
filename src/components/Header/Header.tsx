@@ -6,11 +6,11 @@ const Header: React.FC = () => {
         <header data-testid="header">
             <h1>My Project</h1>
             <nav data-testid="navigation" role="navigation">
-                <ul role="list">
-                    <li role="listitem">
+                <ul>
+                    <li>
                         <Link to="/">Home</Link>
                     </li>
-                    <li role="listitem">
+                    <li>
                         <Link to="/todos">Todos</Link>
                     </li>
                 </ul>
