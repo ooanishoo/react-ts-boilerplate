@@ -15,21 +15,21 @@ describe('getTodos()', () => {
                 userId: 1,
                 id: 1,
                 title: 'todo-test-1',
-                completed: false,
+                completed: false
             },
             {
                 userId: 2,
                 id: 2,
                 title: 'todo-test-2',
-                completed: true,
-            },
+                completed: true
+            }
         ]
         const mockedResponse: AxiosResponse = {
             data: todos,
             status: 200,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
         expect(axios.get).not.toHaveBeenCalled()
@@ -43,7 +43,7 @@ describe('getTodos()', () => {
             status: 100,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
         await expect(getTodo(101)).rejects.toThrow(new Error('Something went wrong'))
@@ -57,14 +57,14 @@ describe('getTodo()', () => {
             userId: 1,
             id: 1,
             title: 'test-todo',
-            completed: false,
+            completed: false
         }
         const mockedResponse: AxiosResponse = {
             data: todo,
             status: 200,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
 
@@ -80,7 +80,7 @@ describe('getTodo()', () => {
             status: 100,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
         //expect(getTodo(1232323)).rejects.toEqual(new Error('Something went wrong'));

@@ -16,14 +16,14 @@ const todos: Todo[] = [
         userId: 1,
         id: 1,
         title: 'todo-test-1',
-        completed: false,
+        completed: false
     },
     {
         userId: 2,
         id: 2,
         title: 'todo-test-2',
-        completed: true,
-    },
+        completed: true
+    }
 ]
 
 describe('<TodoList/>', () => {
@@ -33,7 +33,7 @@ describe('<TodoList/>', () => {
             status: 200,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
 
@@ -51,7 +51,7 @@ describe('<TodoList/>', () => {
             status: 404,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
         await act(async () => {
@@ -68,7 +68,7 @@ describe('<TodoList/>', () => {
             status: 200,
             statusText: 'OK',
             headers: {},
-            config: {},
+            config: {}
         }
         mockedAxios.get.mockResolvedValueOnce(mockedResponse)
 
